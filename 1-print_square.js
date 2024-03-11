@@ -13,8 +13,11 @@ if (process.argv.length <= 2) {
     process.stderr.write("Example: ./1-print_square.js 8\n");
     process.exit(1)
 }
-
-size = parseInt(process.argv[2], 16)
+/* this failed because the parseInt converted the value passed 
+from the argument with an initial type of string to an 
+integer from Base 16 to base 10 
+*/
+size = parseInt(process.argv[2]) 
 
 for (let i = 0 ; i < size ; i ++) {
     for (let j = 0 ; j < size ; j ++) {
